@@ -1,0 +1,11 @@
+services:
+  glados-checkin:
+    image: ghcr.io/zack-zzq/glados_checkin_auto:latest
+    # 如需本地构建，取消注释下面一行并注释上面的 image 行
+    # build: .
+    container_name: glados-checkin
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - TZ=Asia/Shanghai
