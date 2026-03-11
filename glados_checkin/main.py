@@ -50,7 +50,8 @@ def checkin() -> None:
     referer = f"{base_url}/console/checkin"
     origin = base_url
 
-    payload = json.dumps({"token": "glados.one"})
+    domain = os.environ.get("GLADOS_DOMAIN", "glados.one")
+    payload = json.dumps({"token": domain})
     results: list[str] = []
     has_failure = False
 
